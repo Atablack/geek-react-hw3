@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Example extends React.Component {
+  constructor(wayState) {
+    super(wayState);
+    this.state = {
+      color: "black",
+      height: 182,
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <p>{this.state.color}</p>
+        <p>{this.state.height}</p>
+        <Way note="the way how Props work" />
+      </div>
+    );
+  }
 }
 
-export default App;
+const Way = (props) => {
+  return <h1>{props.note}</h1>;
+};
+
+export default Example;
